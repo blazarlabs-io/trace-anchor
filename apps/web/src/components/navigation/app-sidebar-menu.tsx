@@ -19,7 +19,7 @@ import {
 import { ChevronRight } from "lucide-react";
 import Link from "next/link";
 import { useTranslationHandler } from "@/hooks/use-translation-handler";
-import { useTranslateSidebarMenu } from "@/hooks/use-translate-sidebar-menu";
+import { useSidebarMenu } from "@/hooks/use-sidebar-menu";
 import { MenuItemType } from "@/types/sidebar";
 import { useResponsiveSize } from "@/hooks/use-responsive-size";
 
@@ -30,7 +30,7 @@ export function AppSidebarMenu() {
   const { device } = useResponsiveSize();
 
   // * STATES
-  const { data, setData } = useTranslateSidebarMenu();
+  const { data, setData } = useSidebarMenu();
 
   const handleActiveSubItems = (tittle: string, selected: MenuItemType) => {
     setData((old) => {
@@ -85,7 +85,7 @@ export function AppSidebarMenu() {
   return (
     <SidebarGroup>
       <SidebarGroupLabel>
-        {t("dashboardGlobalComponents.sideBar.title")}
+        Dashboard
       </SidebarGroupLabel>
       <SidebarMenu>
         {data.map((item) => (

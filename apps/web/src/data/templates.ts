@@ -58,7 +58,7 @@ export const wineTemplate: Wine = {
   createdAt: Timestamp.fromDate(new Date()),
   lastUpdated: Timestamp.fromDate(new Date()),
   generalInfo: {
-    image: "/images/wine.jpg",
+    image: "/images/01.jpg",
     wineryName: "",
     collectionName: "",
     volume: "",

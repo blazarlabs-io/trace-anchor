@@ -443,11 +443,20 @@ export const terroirSchema = z.object({
     .optional(),
 });
 
+export const sectionBlocksSchema = z.object({
+  id: z.string(),
+  containerClassName: z.string().optional(),
+  gridTemplateClass: z.string().optional(),
+  blocks: z.array(z.any()),
+  columns: z.number().optional(),
+})
+
 export const wineFormSchema = z.object({
   generalInfo: wineGeneralInfoSchema,
-  ingredients: wineIngredientsSchema,
-  nutritionalInfo: wineNutritionalInfoSchema,
-  profile: wineProfileSchema,
+  sections: z.array(sectionBlocksSchema),
+  // ingredients: wineIngredientsSchema,
+  // nutritionalInfo: wineNutritionalInfoSchema,
+  // profile: wineProfileSchema,
   // makingTechnique: wineMakingTechniqueSchema,
   qrCode: z
     .string()

@@ -36,7 +36,7 @@ export function DataTableToolbar<TData>({
     >
       <div className="flex flex-1 items-center space-x-2">
         <Input
-          placeholder={t("myWines.filters.searchBar.placeholder")}
+          placeholder="Filter by collection name..."
           value={
             (table
               .getColumn("generalInfo_collectionName")
@@ -52,7 +52,7 @@ export function DataTableToolbar<TData>({
         {table.getColumn("status") && (
           <DataTableFacetedFilter
             column={table.getColumn("status")}
-            title={t("myWines.filters.status.label")}
+            title="Status"
             options={options}
           />
         )}

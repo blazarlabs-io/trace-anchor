@@ -23,15 +23,15 @@ export const HomePage = () => {
               <div className="">
                 <h1 className="text-5xl font-medium leading-[64px] header-style">
                   <MarkdownPreviewer
-                    content={t("publicPages.homePage.headline")}
+                    content={" Welcome to Traceanchor , your worldwide partner in wine compliance and customer trust"}
                   />
                 </h1>
                 <p className="py-6 text-xl font-normal text-muted-foreground">
-                  {t("publicPages.homePage.subHeadline")}
+                 Trusted solutions for wine producers worldwide: our compliance expertise and QR code tools ensure your customers access accurate product details instantly, enhancing transparency and confidence in every bottle.
                 </p>
                 <Button size="lg" asChild>
                   <Link href={user ? "/dashboard/home" : "/signup"}>
-                    {t("publicPages.homePage.buttonLabel")}
+                    Get Started
                   </Link>
                 </Button>
               </div>

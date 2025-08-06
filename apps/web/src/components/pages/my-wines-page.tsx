@@ -52,13 +52,13 @@ export const MyWinesPage = () => {
     <div className={cn("flex w-full flex-col", "gap-2 md:gap-4 lg:gap-6")}>
       <div className="flex w-full items-center justify-between">
         <PageHeader
-          title={t("myWines.headline")}
-          subtitle={t("myWines.subHeadline")}
+          title="My Products"
+          subtitle="View and manage your products."
         />
         {qrCodesLimit && (
           <div className="flex flex-col items-end gap-2">
-            <UpgradePlanDialog />
-            <div className="flex items-center justify-end gap-1">
+            {/* <UpgradePlanDialog /> */}
+            {/* <div className="flex items-center justify-end gap-1">
               {qrCodesLeft === 0 ? (
                 <>
                   <QrCode size={14} className="text-destructive" />
@@ -86,7 +86,7 @@ export const MyWinesPage = () => {
                   )}
                 </>
               )}
-            </div>
+            </div> */}
           </div>
         )}
       </div>
@@ -95,11 +95,11 @@ export const MyWinesPage = () => {
         <Button
           variant="dashed"
           onClick={() =>
-            router.push(`/dashboard/my-wines/editor/${generateWineId()}`)
+            router.push(`/dashboard/products/editor/${generateWineId()}`)
           }
         >
           <Plus size={16} className="text-foreground" />
-          {t("myWines.addNewWineButtonLabel")}
+          Add New Product
         </Button>
       </div>
       {/* *TABLE */}

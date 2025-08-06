@@ -63,25 +63,30 @@ const dataTemplate: MenuType[] = [
   },
 ];
 
-export const useTranslateSidebarMenu = () => {
-  const { t } = useTranslationHandler();
-  const setMenuTraslation = (data: MenuType[]) => {
-    return data.map((d, i) => {
-      d.title = t(`dashboardGlobalComponents.sideBar.items.${i}.label`);
-      if (d.items) {
-        d.items = d.items.map((item, j) => {
-          return {
-            ...item,
-            title: t(
-              `dashboardGlobalComponents.sideBar.items.${i}.subItems.${j}.label`,
-            ),
-          };
-        });
-      }
-      return d;
-    });
-  };
-  const [data, setData] = useState<MenuType[]>(setMenuTraslation(dataTemplate));
+// export const useTranslateSidebarMenu = () => {
+//   const { t } = useTranslationHandler();
+//   const setMenuTraslation = (data: MenuType[]) => {
+//     return data.map((d, i) => {
+//       d.title = t(`dashboardGlobalComponents.sideBar.items.${i}.label`);
+//       if (d.items) {
+//         d.items = d.items.map((item, j) => {
+//           return {
+//             ...item,
+//             title: t(
+//               `dashboardGlobalComponents.sideBar.items.${i}.subItems.${j}.label`,
+//             ),
+//           };
+//         });
+//       }
+//       return d;
+//     });
+//   };
+//   const [data, setData] = useState<MenuType[]>(setMenuTraslation(dataTemplate));
 
-  return { data, setData };
-};
+//   return { data, setData };
+// };
+
+export function useSidebarMenu() {
+
+  return { data: dataTemplate };
+}
