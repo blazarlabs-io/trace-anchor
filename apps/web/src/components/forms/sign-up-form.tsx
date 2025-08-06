@@ -99,7 +99,7 @@ export const SignUpForm = () => {
       )}
     >
       <h1 className="pb-4 text-center text-2xl font-semibold">
-        {t("publicComponents.signup.title")}
+        Your first EU labeled wine is only one sign-up away
       </h1>
       <Form {...form}>
         <form
@@ -108,7 +108,7 @@ export const SignUpForm = () => {
         >
           <SignUpInputField
             name="email"
-            placeholder={t("publicComponents.signup.email.placeholder")}
+            placeholder={"Email"}
             inputType="email"
             formControl={
               form.control as Control<z.infer<typeof signUpFormSchema>>
@@ -117,7 +117,7 @@ export const SignUpForm = () => {
           />
           <SignUpPasswordInputField
             name="password"
-            placeholder={t("publicComponents.signup.password.placeholder")}
+            placeholder={"Password"}
             formControl={
               form.control as Control<z.infer<typeof signUpFormSchema>>
             }
@@ -125,9 +125,7 @@ export const SignUpForm = () => {
           />
           <SignUpPasswordInputField
             name="confirmPassword"
-            placeholder={t(
-              "publicComponents.signup.confirmPassword.placeholder",
-            )}
+            placeholder={"Confirm Password"}
             formControl={
               form.control as Control<z.infer<typeof signUpFormSchema>>
             }
@@ -147,17 +145,17 @@ export const SignUpForm = () => {
             type="submit"
             className="w-full"
           >
-            {t("publicComponents.signup.signUpButtonLabel")}
+            Sign Up
           </Button>
           <div className="flex items-center justify-center gap-3">
             <p className="text-sm leading-[20px] text-muted-foreground">
-              {t("publicComponents.signup.loginText.text")}
+              Already have an account?
             </p>
             <Link
               href="/login"
               className="text-sm font-bold text-primary underline"
             >
-              {t("publicComponents.signup.loginText.buttonLabel")}
+              Login
             </Link>
           </div>
         </form>
@@ -165,7 +163,7 @@ export const SignUpForm = () => {
       <div className="flex w-full items-center justify-between gap-4 py-2">
         <div className="h-[1px] w-full bg-border" />
         <span className="min-w-fit">
-          {t("publicComponents.signup.separatorText")}
+          or
         </span>
         <div className="h-[1px] w-full bg-border" />
       </div>
@@ -186,12 +184,12 @@ export const SignUpForm = () => {
           height={24}
           className={cn(!isVerified && "opacity-30 grayscale")}
         />
-        {t("publicComponents.signup.googleButtonLabel")}
+        Continue With Google
       </button>
       <div className="mt-[16px] w-full sm:w-[320px] px-2">
         <MarkdownPreviewer
           className="text-xs leading-[20px] text-muted-foreground legal-text-container"
-          content={t("publicComponents.login.legalText")}
+          content={"**By clicking on Login, Continue With Google or Continue With Facebook, I state that I have read and understood the   [Terms of Service](https://traceanchor.com/legal/terms-and-conditions) and [Privacy Policy](https://traceanchor.com/legal/privacy-policy).**"}
         />
       </div>
     </div>

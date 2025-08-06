@@ -88,29 +88,23 @@ export const DeleteWineDialog = ({
       <DialogContent>
         <DialogHeader>
           <DialogTitle>
-            {t("dashboardGlobalComponents.dialogs.deleteWineDialog.title")}
+            Delete Product?
           </DialogTitle>
           <DialogDescription>
             <MarkdownPreviewer
-              content={t(
-                "dashboardGlobalComponents.dialogs.deleteWineDialog.description",
-              )}
+              content={`**For security reasons your wine will be archived . If you wish to permanently delete it, please contact us and we will take care of it. **`}
             />
           </DialogDescription>
         </DialogHeader>
         <DialogFooter className="flex justify-end">
           <DialogClose asChild>
             <Button type="button" variant="ghost">
-              {t(
-                "dashboardGlobalComponents.dialogs.deleteWineDialog.buttons.cancelButtonLabel",
-              )}
+              Cancel
             </Button>
           </DialogClose>
           <DialogClose asChild>
             <Button type="button" variant="default" onClick={handleDelete}>
-              {t(
-                "dashboardGlobalComponents.dialogs.deleteWineDialog.buttons.confirmButtonLabel",
-              )}
+              Confirm
             </Button>
           </DialogClose>
         </DialogFooter>

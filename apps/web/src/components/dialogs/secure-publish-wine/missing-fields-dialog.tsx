@@ -36,7 +36,7 @@ export const MissingFieldsDialog = ({
 
   // * HANDLE EDIT WINE
   const handleEdit = () => {
-    router.push(`/dashboard/my-wines/editor/${wineId}`);
+    router.push(`/dashboard/products/editor/${wineId}`);
     if (onAction) onAction("MissingFieldsDialog");
   };
 
@@ -50,7 +50,7 @@ export const MissingFieldsDialog = ({
                 {children}
               </TooltipTrigger>
               <TooltipContent>
-                <p>{t("myWines.table.rowsActions.1.tooltip") || ""}</p>
+                <p>myWines.table.rowsActions.1.tooltip</p>
               </TooltipContent>
             </Tooltip>
           </TooltipProvider>
@@ -58,17 +58,13 @@ export const MissingFieldsDialog = ({
         <DialogContent>
           <DialogHeader>
             <DialogTitle>
-              {t(
-                "dashboardGlobalComponents.dialogs.missingFieldsDialog.title",
-              ) || ""}
+              dashboardGlobalComponents.dialogs.missingFieldsDialog.title
             </DialogTitle>
             <DialogDescription>
               <span className="description-container">
                 <MarkdownPreviewer
                   content={
-                    t(
-                      "dashboardGlobalComponents.dialogs.missingFieldsDialog.description",
-                    ) || ""
+                    "dashboardGlobalComponents.dialogs.missingFieldsDialog.description"
                   }
                 />
               </span>
@@ -77,9 +73,7 @@ export const MissingFieldsDialog = ({
           <DialogFooter className="flex justify-end">
             <DialogClose asChild onClick={handleEdit}>
               <span className="flex h-10 cursor-pointer items-center justify-center rounded-md bg-primary px-6 text-primary-foreground transition duration-200 ease-in-out hover:bg-primary/80">
-                {t(
-                  "dashboardGlobalComponents.dialogs.missingFieldsDialog.buttons.cancelButtonLabel",
-                ) || ""}
+                Cancel
               </span>
             </DialogClose>
           </DialogFooter>

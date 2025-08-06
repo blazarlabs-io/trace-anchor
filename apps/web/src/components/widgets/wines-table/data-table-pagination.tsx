@@ -33,7 +33,7 @@ export function DataTablePagination<TData>({
         {device !== "mobile" && (
           <div className="flex items-center space-x-2">
             <p className="text-sm font-medium">
-              {t("myWines.pagination.rowsPerPage")}
+              Rows per page
             </p>
             <Select
               value={`${table.getState().pagination.pageSize}`}
@@ -57,7 +57,7 @@ export function DataTablePagination<TData>({
           </div>
         )}
         <div className="flex w-[100px] items-center justify-center text-sm font-medium">
-          {`${t("myWines.pagination.currentPage")} ${table.getState().pagination.pageIndex + 1} / ${table.getPageCount()}`}
+          {`${"Page"} ${table.getState().pagination.pageIndex + 1} / ${table.getPageCount()}`}
         </div>
         <div className="flex items-center space-x-2">
           <Button

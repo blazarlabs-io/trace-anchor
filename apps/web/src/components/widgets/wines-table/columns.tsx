@@ -54,7 +54,7 @@ export const columns = () => {
         return (
           <DataTableColumnHeader
             column={column}
-            title={t("myWines.table.columns.0.header")}
+            title="Collection"
           />
         );
       },
@@ -117,7 +117,7 @@ export const columns = () => {
       header: ({ column }) => (
         <DataTableColumnHeader
           column={column}
-          title={t("myWines.table.columns.1.header")}
+          title="Status"
         />
       ),
       cell: ({ row }) => {
@@ -153,7 +153,7 @@ export const columns = () => {
       header: ({ column }) => (
         <DataTableColumnHeader
           column={column}
-          title={t("myWines.table.columns.2.header")}
+          title="Public Url"
         />
       ),
       cell: ({ row }) => {
@@ -174,7 +174,7 @@ export const columns = () => {
       header: ({ column }) => (
         <DataTableColumnHeaderSimple
           column={column}
-          title={t("myWines.table.columns.3.header")}
+          title="QR Code"
         />
       ),
       cell: ({ row }) => {

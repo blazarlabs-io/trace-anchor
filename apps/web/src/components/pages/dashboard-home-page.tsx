@@ -31,8 +31,8 @@ export const DashboardHomePage = () => {
   return (
     <div className="flex w-full flex-col gap-6">
       <PageHeader
-        title={t("dashboardHome.headline")}
-        subtitle={`${t("dashboardHome.subHeadline")} ${user?.displayName || user?.email || ""}`}
+        title="Home"
+        subtitle={`${"Welcome back"} ${user?.displayName || user?.email || ""}`}
       />
       <Separator className="w-full" />
       <div>
@@ -53,12 +53,12 @@ export const DashboardHomePage = () => {
                     {winery?.info?.name || "Winery Name"}
                   </p>
                   <p className="text-base text-muted-foreground">
-                    {`${t("dashboardHome.avatarCard.foundedInText")} ${winery?.info?.foundedIn || "N/A"}`}
+                    {`${"Founded in"} ${winery?.info?.foundedIn || "N/A"}`}
                   </p>
                 </div>
               </div>
               <div className="flex w-full flex-col items-center justify-center gap-3 lg:items-end">
-                <div className="flex items-center justify-start gap-1">
+                {/* <div className="flex items-center justify-start gap-1">
                   <p className="text-xs text-muted-foreground">
                     {t("dashboardHome.avatarCard.planText")}
                   </p>
@@ -75,17 +75,18 @@ export const DashboardHomePage = () => {
                 </div>
                 <div>
                   <UpgradePlanDialog />
-                </div>
+                </div> */}
               </div>
             </div>
           </CardContent>
           <CardFooter></CardFooter>
         </Card>
       </div>
+      {/*
       <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
         <Card className="shadow-none">
           <CardHeader className="flex flex-row items-center justify-between">
-            <CardTitle>{t("dashboardHome.statCards.0.title")}</CardTitle>
+            <CardTitle>{"Wine Collections"}</CardTitle>
             <Wine className="h-4 w-4 text-muted-foreground" />
           </CardHeader>
           <CardContent>
@@ -94,17 +95,17 @@ export const DashboardHomePage = () => {
             </p>
           </CardContent>
           <CardFooter>
-            {/* <p className="text-sm text-muted-foreground">
+             <p className="text-sm text-muted-foreground">
               Collections created since {winery?.info?.foundedIn || "N/A"}
-            </p> */}
+            </p> 
             <p className="text-sm text-muted-foreground">
-              {t("dashboardHome.statCards.0.description")}
+              {"Collections created last year "}
             </p>
           </CardFooter>
         </Card>
         <Card className="shadow-none">
           <CardHeader className="flex flex-row items-center justify-between">
-            <CardTitle>{t("dashboardHome.statCards.1.title")}</CardTitle>
+            <CardTitle>{"Vineyards Surface"}</CardTitle>
             <LandPlot className="h-4 w-4 text-muted-foreground" />
           </CardHeader>
           <CardContent className="flex flex-row items-center justify-start gap-2">
@@ -112,18 +113,18 @@ export const DashboardHomePage = () => {
               {winery?.info?.vineyardsSurface || "N/A"}
             </p>
             <p className="text-4xl font-bold text-muted-foreground">
-              {t("dashboardHome.statCards.1.unit")}
+              Ha
             </p>
           </CardContent>
           <CardFooter>
             <p className="text-sm text-muted-foreground">
-              {t("dashboardHome.statCards.1.description")}
+              Overall surface area of your winery vineyards
             </p>
           </CardFooter>
         </Card>
         <Card className="shadow-none">
           <CardHeader className="flex flex-row items-center justify-between">
-            <CardTitle>{t("dashboardHome.statCards.2.title")}</CardTitle>
+            <CardTitle>Grape Varieties</CardTitle>
             <Grape className="h-4 w-4 text-muted-foreground" />
           </CardHeader>
           <CardContent>
@@ -133,11 +134,12 @@ export const DashboardHomePage = () => {
           </CardContent>
           <CardFooter>
             <p className="text-sm text-muted-foreground">
-              {t("dashboardHome.statCards.2.description")}
+              Grape types grown by you
             </p>
           </CardFooter>
         </Card>
       </div>
+      */}
     </div>
   );
 };

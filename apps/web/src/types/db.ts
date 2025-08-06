@@ -8,13 +8,16 @@ export interface Coordinates {
 export interface WineGeneralInfo {
   wineryName: string;
   image: string;
-  collectionName: string;
   volume: string;
   type: string;
   grapeVarieties: Grape[];
   country: string;
   cdo?: string;
   collectionSize?: string;
+  companyName: string;
+  collectionName: string;
+  productColor: string;
+  productCode: string;
 }
 
 export interface Ingredient {
@@ -90,6 +93,14 @@ export interface Tokenization {
   bottles?: string[];
 }
 
+export interface Sections {
+  id: string;
+  containerClassName?: string;
+  gridTemplateClass?: string;
+  blocks: any[];
+  columns?: number;
+}
+
 export interface Wine {
   uid: string;
   id: string;
@@ -100,6 +111,7 @@ export interface Wine {
   createdAt: Timestamp;
   lastUpdated: Timestamp;
   generalInfo: WineGeneralInfo;
+  sections: Sections[],
   ingredients: WineIngredients;
   nutritionalInfo?: WineNutritionalInfo;
   profile?: WineProfile;

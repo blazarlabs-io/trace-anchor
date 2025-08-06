@@ -62,27 +62,7 @@ export const NavigationBar = () => {
                 setOpen(false);
               }}
             >
-              {t("publicComponents.topBar.links.home.label")}
-            </Link>
-            <Link
-              href="/explore"
-              className="flex w-full items-center py-2 text-lg font-semibold"
-              prefetch={false}
-              onClick={() => {
-                setOpen(false);
-              }}
-            >
-              {t("publicComponents.topBar.links.explore.label")}
-            </Link>
-            <Link
-              href="/pricing"
-              className="flex w-full items-center py-2 text-lg font-semibold"
-              prefetch={false}
-              onClick={() => {
-                setOpen(false);
-              }}
-            >
-              {t("publicComponents.topBar.links.pricing.label")}
+              Home
             </Link>
             <Link
               href="/contact"
@@ -92,7 +72,7 @@ export const NavigationBar = () => {
                 setOpen(false);
               }}
             >
-              {t("publicComponents.topBar.links.contact.label")}
+              Contact us
             </Link>
           </div>
         </SheetContent>
@@ -120,38 +100,9 @@ export const NavigationBar = () => {
               )}
               prefetch={false}
             >
-              {t("publicComponents.topBar.links.home.label")}
+              Home
             </Link>
-            <Link
-              href="/explore"
-              className={cn(
-                "group inline-flex h-9 sm:w-[90px] md:w-max",
-                "items-center justify-center rounded-md bg-white",
-                "px-2 md:px-4 py-2 text-sm font-medium transition-colors",
-                "hover:bg-gray-100 hover:text-gray-900 focus:bg-gray-100 focus:text-gray-900 focus:outline-none",
-                "disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-gray-100/50 data-[state=open]:bg-gray-100/50",
-                "dark:bg-gray-950 dark:hover:bg-gray-800 dark:hover:text-gray-50 dark:focus:bg-gray-800 dark:focus:text-gray-50",
-                "dark:data-[active]:bg-gray-800/50 dark:data-[state=open]:bg-gray-800/50",
-              )}
-              prefetch={false}
-            >
-              {t("publicComponents.topBar.links.explore.label")}
-            </Link>
-            <Link
-              href="/pricing"
-              className={cn(
-                "group inline-flex h-9 sm:w-[90px] md:w-max",
-                "items-center justify-center rounded-md bg-white",
-                "px-2 md:px-4 py-2 text-sm font-medium transition-colors",
-                "hover:bg-gray-100 hover:text-gray-900 focus:bg-gray-100 focus:text-gray-900 focus:outline-none",
-                "disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-gray-100/50 data-[state=open]:bg-gray-100/50",
-                "dark:bg-gray-950 dark:hover:bg-gray-800 dark:hover:text-gray-50 dark:focus:bg-gray-800 dark:focus:text-gray-50",
-                "dark:data-[active]:bg-gray-800/50 dark:data-[state=open]:bg-gray-800/50",
-              )}
-              prefetch={false}
-            >
-              {t("publicComponents.topBar.links.pricing.label")}
-            </Link>
+          
             <Link
               href="/contact"
               className={cn(
@@ -165,7 +116,7 @@ export const NavigationBar = () => {
               )}
               prefetch={false}
             >
-              {t("publicComponents.topBar.links.contact.label")}
+              Contact us
             </Link>
           </nav>
         </div>
@@ -175,7 +126,7 @@ export const NavigationBar = () => {
             <>
               <Button variant="outline" size="sm" asChild>
                 <Link href="/dashboard/home">
-                  {t("publicComponents.topBar.buttons.backToDashboard.label")}
+                   Back to Dashboard
                 </Link>
               </Button>
               {!user.emailVerified && (
@@ -201,7 +152,7 @@ export const NavigationBar = () => {
                 className="md:size-sm lg:size-lg"
               >
                 <Link href="/login" className="">
-                  {t("publicComponents.topBar.buttons.logIn.label")}
+                  Login
                 </Link>
               </Button>
               <Button
@@ -210,7 +161,7 @@ export const NavigationBar = () => {
                 className="md:size-sm lg:size-lg"
               >
                 <Link href="/signup">
-                  {t("publicComponents.topBar.buttons.signUp.label")}
+                  Sign up
                 </Link>
               </Button>
             </div>

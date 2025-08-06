@@ -144,7 +144,7 @@ export const LoginForm = () => {
     >
       <div className="mb-4">
         <h1 className="text-center text-2xl font-semibold">
-          {t("publicComponents.login.title")}
+          Login
         </h1>
       </div>
       <TooltipProvider>
@@ -166,7 +166,7 @@ export const LoginForm = () => {
               height={24}
               className={cn(!isVerified && "opacity-30 grayscale")}
             />
-            {t("publicComponents.login.googleButtonLabel")}
+            Continue with Google
           </TooltipTrigger>
           <TooltipContent>
             <p>{t("publicComponents.login.googleButtonTooltip")}</p>
@@ -176,7 +176,7 @@ export const LoginForm = () => {
       <div className="flex items-center justify-center gap-4 py-2">
         <div className="h-[1px] w-full bg-border" />
         <span className="min-w-fit">
-          {t("publicComponents.login.separatorText")}
+          or log with
         </span>
         <div className="h-[1px] w-full bg-border" />
       </div>
@@ -187,14 +187,14 @@ export const LoginForm = () => {
         >
           <AuthInputField
             name="email"
-            placeholder={t("publicComponents.login.email.placeholder")}
+            placeholder={"Email"}
             inputType="email"
             formControl={form.control}
             isDisabled={isProcessing}
           />
           <PasswordInputField
             name="password"
-            placeholder={t("publicComponents.login.password.placeholder")}
+            placeholder={"Password"}
             formControl={form.control}
             isDisabled={isProcessing}
           />
@@ -206,7 +206,7 @@ export const LoginForm = () => {
               onClick={handleForgotPassword}
               disabled={isProcessing}
             >
-              {t("publicComponents.login.forgotPassword.label")}
+              Forgot password?
             </button>
           </div>
           <div className="flex w-full items-center justify-center">
@@ -223,25 +223,25 @@ export const LoginForm = () => {
             type="submit"
             className="w-full"
           >
-            {t("publicComponents.login.loginButtonLabel")}
+            Login
           </Button>
         </form>
       </Form>
       <div className="mt-4 flex items-center justify-center gap-2">
         <span className="text-sm">
-          {t("publicComponents.login.register.text")}
+          Dont have an account?
         </span>
         <Link
           href="/signup"
           className="text-sm font-medium text-primary underline"
         >
-          {t("publicComponents.login.register.buttonLabel")}
+          Sign Up
         </Link>
       </div>
       <div className="mt-[16px] w-full sm:w-[320px] px-2">
         <MarkdownPreviewer
           className="text-xs leading-[20px] text-muted-foreground legal-text-container"
-          content={t("publicComponents.login.legalText")}
+          content={"**By clicking on Login, Continue With Google or Continue With Facebook, I state that I have read and understood the   [Terms of Service](https://traceanchor.com/legal/terms-and-conditions) and [Privacy Policy](https://traceanchor.com/legal/privacy-policy).**"}
         />
       </div>
     </div>

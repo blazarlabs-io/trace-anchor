@@ -96,7 +96,7 @@ const EditWine = ({ row }: any) => {
       publicUrl: `/explore/wine/${row.original.id}`,
     });
     // router.push(`/dashboard/my-wines/wine-editor/${row.original.id}`);
-    router.push(`/dashboard/my-wines/editor/${row.original.id}`);
+    router.push(`/dashboard/products/editor/${row.original.id}`);
   };
 
   return (
@@ -134,7 +134,7 @@ const EditWineWithDialog = ({ row }: any) => {
 const PreviewWine = ({ row }: any) => {
   const router = useRouter();
   const handlePreview = () => {
-    router.push(`/dashboard/my-wines/preview-wine/${row.original.id}`);
+    router.push(`/dashboard/products/preview-wine/${row.original.id}`); // my-wines/preview-wine 
   };
   return (
     <TooltipProvider>

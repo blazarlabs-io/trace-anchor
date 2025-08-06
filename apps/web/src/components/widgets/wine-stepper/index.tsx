@@ -31,20 +31,20 @@ export const WineStepper = ({ wineId, selectedStep }: WineStepperProps) => {
     return [
       {
         id: "editor",
-        title: t("wineStepper.wineryDetails.headline"),
-        description: t("wineStepper.wineryDetails.subHeadline"),
+        title: "Product Editor",
+        description: "Edit and save your product details.",
         index: 0,
       },
       {
         id: "preview",
-        title: t("wineStepper.previewWine.headline"),
-        description: t("wineStepper.previewWine.subHeadline"),
+        title: "Preview Product",
+        description: "Preview your product before publishing.",
         index: 1,
       },
       {
         id: "publish",
-        title: t("wineStepper.publishWine.headline"),
-        description: t("wineStepper.publishWine.subHeadline"),
+        title: "Publish Product",
+        description: "Publish your product to make it available.",
         index: 2,
       },
     ];
@@ -62,7 +62,7 @@ export const WineStepper = ({ wineId, selectedStep }: WineStepperProps) => {
       <div className="flex w-full items-center justify-between">
         <div className="flex flex-col items-start justify-start gap-2">
           <span className="text-sm">
-            {`${t("wineStepper.currentStep")} ${stepper.current.index + 1} / ${steps.length}`}
+            {`${"Step"} ${stepper.current.index + 1} / ${steps.length}`}
           </span>
           <PageHeader
             title={baseStepps[stepper.current.index]?.title || "NA"}
@@ -150,12 +150,12 @@ export const WineStepper = ({ wineId, selectedStep }: WineStepperProps) => {
               onClick={stepper.prev}
               disabled={stepper.isFirst}
             >
-              {t("wineStepper.wineryDetails.buttons.backButtonLabel")}
+              Back
             </Button>
             <Button onClick={stepper.next}>
               {stepper.isLast
                 ? "Complete"
-                : t("wineStepper.wineryDetails.buttons.nextButtonLabel")}
+                : "Next"}
             </Button>
           </div>
         ) : (

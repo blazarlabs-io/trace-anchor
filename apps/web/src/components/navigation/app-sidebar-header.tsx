@@ -69,13 +69,7 @@ export function AppSidebarHeader() {
         <Separator orientation="vertical" className="h-6" /> */}
         {/*  */}
         <LocaleSwitcher />
-        <Button
-          variant="outline"
-          size="sm"
-          onClick={() => router.push("/explore")}
-        >
-          {t("dashboardGlobalComponents.topBar.buttons.exploreWines.label")}
-        </Button>
+        
         <Separator orientation="vertical" className="h-6" />
         {user && (
           <DropdownMenu>
@@ -95,7 +89,7 @@ export function AppSidebarHeader() {
                   onClick={handleSignOut}
                 >
                   <LogOut />
-                  {t("dashboardGlobalComponents.topBar.dropdown.0.label")}
+                  Log Out
                 </DropdownMenuItem>
               </DropdownMenuGroup>
             </DropdownMenuContent>

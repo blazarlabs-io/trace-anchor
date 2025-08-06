@@ -118,15 +118,13 @@ export const ContactForm = () => {
                 <FormItem className="flex flex-col items-start justify-start">
                   <div className="space-y-0.5">
                     <FormLabel className="text-sm">
-                      {t("publicPages.contactPage.form.email.label")}
+                      Your Email
                     </FormLabel>
                   </div>
                   <FormControl>
                     <Input
                       type="email"
-                      placeholder={t(
-                        "publicPages.contactPage.form.email.placeholder",
-                      )}
+                      placeholder={"Email address"}
                       className="w-full shadow-none"
                       value={field.value || ""}
                       onChange={field.onChange}
@@ -145,14 +143,12 @@ export const ContactForm = () => {
                 <FormItem className="flex flex-col items-start justify-start">
                   <div className="space-y-0.5">
                     <FormLabel className="text-sm">
-                      {t("publicPages.contactPage.form.message.label")}
+                      How can we help you?
                     </FormLabel>
                   </div>
                   <FormControl>
                     <Textarea
-                      placeholder={t(
-                        "publicPages.contactPage.form.message.placeholder",
-                      )}
+                      placeholder={"Tell us more about you needs..."}
                       className="min-h-40 w-full shadow-none"
                       value={field.value || ""}
                       onChange={field.onChange}
@@ -166,7 +162,7 @@ export const ContactForm = () => {
           <div className="flex flex-col w-full items-center gap-4">
             <span className="text-sm text-muted-foreground copyright-container">
               <MarkdownPreviewer
-                content={t("publicPages.contactPage.copyright")}
+                content={"**By submitting this form, you consent to have read and accepted our [Terms of Service](https://traceanchor.com/legal/terms-and-conditions) and [Privacy Policy](https://traceanchor.com/legal/privacy-policy).**"}
               />
             </span>
             <div className="flex items-center justify-end">
@@ -174,7 +170,7 @@ export const ContactForm = () => {
                 {sending ? (
                   <LoaderCircle className="animate-spin text-primary-foreground" />
                 ) : (
-                  t("publicPages.contactPage.buttonLabel")
+                  "Send"
                 )}
               </Button>
             </div>
