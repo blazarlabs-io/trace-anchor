@@ -60,6 +60,7 @@ export const wineTemplate: Wine = {
   generalInfo: {
     image: "/images/01.jpg",
     wineryName: "",
+    companyName: "",
     collectionName: "",
     volume: "",
     type: "",
@@ -67,6 +68,8 @@ export const wineTemplate: Wine = {
     country: "",
     cdo: "",
     collectionSize: "",
+    productColor: "",
+    productCode: "",
   },
   ingredients: {
     rawMaterial: "",
@@ -84,6 +87,7 @@ export const wineTemplate: Wine = {
     protein: "",
     salt: "",
   },
+  sections: [],
   profile: {
     color: "",
     aromaProfile: [],
