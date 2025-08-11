@@ -56,7 +56,7 @@ export const AuthProvider = ({
   /* This effect only set the user data if it is exist */
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, async (user) => {
-      // console.log("Auth User", user);
+      console.log("\n\nAuth State Changed", user);
       if (!user) return;
       await setUserHandler(user);
     });

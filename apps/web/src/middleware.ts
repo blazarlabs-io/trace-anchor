@@ -43,10 +43,12 @@ export async function middleware(request: NextRequest) {
     }
     // * IF TRIES ACCESSING TO A PRIVATE ROUTE, AND EMAIL IS NOT VERIFIED, REDIRECT TO VERIFY EMAIL PAGE
     if (onPrivateRoute && !email_verified) {
+      console.log("Redirecting to verify email page");
       return NextResponse.redirect(new URL("/verify-email", request.url));
     }
     // * IF TRIES ACCESSING TO CONFIRM EMAIL OR VERIFY PAGE, AND BEING EMAIL ALREADY VERIFIED, REDIRECT TO DASHBOARD
     if ((onConfirmEmail || OnVerifyEmail) && email_verified) {
+      console.log("Redirecting to dashboard home");
       return NextResponse.redirect(new URL("/dashboard/home", request.url));
     }
     return NextResponse.next();
@@ -54,6 +56,7 @@ export async function middleware(request: NextRequest) {
     // * BEING NOT LOGGED IN
     // * IF TRIES ACCESSING PRIVATE ROUTES, VERIFY EMAIL PAGE, REDIRECT TO LOGIN
     if (onPrivateRoute || OnVerifyEmail) {
+      console.log("Redirecting to login page");
       return NextResponse.redirect(new URL("/login", request.url));
     }
     return NextResponse.next();
