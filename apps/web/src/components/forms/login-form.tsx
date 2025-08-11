@@ -129,7 +129,8 @@ export const LoginForm = () => {
       console.log("isGoogleLoginSuccess REDIRECTING");
       // router.push("/dashboard/home");
       if (typeof window !== "undefined") {
-        window.location.href = "/dashboard/home";
+        console.log("redirect goes here...");
+        // window.location.href = "/dashboard/home";
       }
     }
   }, [isGoogleLoginSuccess, isGoogleLogin]);

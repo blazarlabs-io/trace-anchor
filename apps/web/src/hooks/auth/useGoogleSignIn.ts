@@ -47,15 +47,15 @@ export const useGoogleSignIn = () => {
       console.log("User:", user);
       console.log("=========================\n\n");
 
-      // setIsGoogleLoginSuccess(true);
-      // if (!isUserNew(creationTime)) return;
-      // await sendEmailService({
-      //   toEmail: email,
-      //   templateId: emailTemplates["welcome-email"],
-      //   dynamicTemplateData: {
-      //     user: displayName,
-      //   },
-      // });
+      setIsGoogleLoginSuccess(true);
+      if (!isUserNew(creationTime)) return;
+      await sendEmailService({
+        toEmail: email,
+        templateId: emailTemplates["welcome-email"],
+        dynamicTemplateData: {
+          user: displayName,
+        },
+      });
     } catch (error: any) {
       console.error(error);
       setIsGoogleLoginSuccess(false);
