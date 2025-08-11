@@ -38,6 +38,7 @@ export async function middleware(request: NextRequest) {
     //  * IF TRIES ACCESSING TO AN AUTH OR ROOT PAGE PREVENT ACCESS IF EMAIL IS VERIFIED
     if (pathname === "/" || onAuthRoute) {
       const redirectPath = email_verified ? "/dashboard/home" : "/verify-email";
+      console.log("Redirecting to:", redirectPath);
       return NextResponse.redirect(new URL(redirectPath, request.url));
     }
     // * IF TRIES ACCESSING TO A PRIVATE ROUTE, AND EMAIL IS NOT VERIFIED, REDIRECT TO VERIFY EMAIL PAGE
