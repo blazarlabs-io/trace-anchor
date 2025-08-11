@@ -126,7 +126,7 @@ export const LoginForm = () => {
 
   useEffect(() => {
     if (isGoogleLoginSuccess) {
-      // console.log("isGoogleLoginSuccess REDIRECTING");
+      console.log("isGoogleLoginSuccess REDIRECTING");
       // router.push("/dashboard/home");
       if (typeof window !== "undefined") {
         window.location.href = "/dashboard/home";
@@ -143,9 +143,7 @@ export const LoginForm = () => {
       )}
     >
       <div className="mb-4">
-        <h1 className="text-center text-2xl font-semibold">
-          Login
-        </h1>
+        <h1 className="text-center text-2xl font-semibold">Login</h1>
       </div>
       <TooltipProvider>
         <Tooltip>
@@ -175,9 +173,7 @@ export const LoginForm = () => {
       </TooltipProvider>
       <div className="flex items-center justify-center gap-4 py-2">
         <div className="h-[1px] w-full bg-border" />
-        <span className="min-w-fit">
-          or log with
-        </span>
+        <span className="min-w-fit">or log with</span>
         <div className="h-[1px] w-full bg-border" />
       </div>
       <Form {...form}>
@@ -228,9 +224,7 @@ export const LoginForm = () => {
         </form>
       </Form>
       <div className="mt-4 flex items-center justify-center gap-2">
-        <span className="text-sm">
-          Dont have an account?
-        </span>
+        <span className="text-sm">Dont have an account?</span>
         <Link
           href="/signup"
           className="text-sm font-medium text-primary underline"
@@ -241,7 +235,9 @@ export const LoginForm = () => {
       <div className="mt-[16px] w-full sm:w-[320px] px-2">
         <MarkdownPreviewer
           className="text-xs leading-[20px] text-muted-foreground legal-text-container"
-          content={"**By clicking on Login, Continue With Google or Continue With Facebook, I state that I have read and understood the   [Terms of Service](https://traceanchor.com/legal/terms-and-conditions) and [Privacy Policy](https://traceanchor.com/legal/privacy-policy).**"}
+          content={
+            "**By clicking on Login, Continue With Google or Continue With Facebook, I state that I have read and understood the   [Terms of Service](https://traceanchor.com/legal/terms-and-conditions) and [Privacy Policy](https://traceanchor.com/legal/privacy-policy).**"
+          }
         />
       </div>
     </div>
