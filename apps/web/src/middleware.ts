@@ -27,6 +27,14 @@ export async function middleware(request: NextRequest) {
   const onConfirmEmail = pathname.startsWith("/confirm-email");
   const OnVerifyEmail = pathname.startsWith("/verify-email");
 
+  console.log("\n\n===========================");
+  console.log("Middleware Pathname:", pathname);
+  console.log("On Private Route:", onPrivateRoute);
+  console.log("On Confirm Email:", onConfirmEmail);
+  console.log("On Verify Email:", OnVerifyEmail);
+  console.log("Auth Data:", authData);
+  console.log("=========================\n\n");
+
   if (authData) {
     const {
       decodedData: { email_verified },
@@ -34,6 +42,10 @@ export async function middleware(request: NextRequest) {
     const onAuthRoute = authProtectedRoutes.some((authRoute) =>
       pathname.startsWith(authRoute),
     );
+
+    console.log("\n\n===========================");
+    console.log("onAuthRoute:", onAuthRoute);
+    console.log("=========================\n\n");
 
     //  * IF TRIES ACCESSING TO AN AUTH OR ROOT PAGE PREVENT ACCESS IF EMAIL IS VERIFIED
     if (pathname === "/" || onAuthRoute) {
