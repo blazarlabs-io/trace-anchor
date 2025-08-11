@@ -83,6 +83,7 @@ export const LoginForm = () => {
       const user = userCredential.user;
       await setUserHandler(user);
       const idToken = await user.getIdToken();
+      console.log("Setting cookie:", idToken);
       setCookie(AUTH_COOKIE, idToken, {
         path: "/",
         secure: process.env.NODE_ENV === "production",
