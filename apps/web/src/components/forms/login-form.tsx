@@ -94,7 +94,7 @@ export const LoginForm = () => {
           title: t("toasts.auth.loginSuccess.title"),
           description: t("toasts.auth.loginSuccess.description"),
         });
-        router.replace("/dashboard/home");
+        router.push("/dashboard/home");
       } else {
         toast({
           variant: "destructive",
@@ -126,14 +126,14 @@ export const LoginForm = () => {
 
   useEffect(() => {
     if (isGoogleLoginSuccess) {
-      console.log("isGoogleLoginSuccess REDIRECTING");
-      // router.push("/dashboard/home");
+      console.log("isGoogleLoginSuccess");
       if (typeof window !== "undefined") {
-        console.log("redirect goes here...");
-        // window.location.href = "/dashboard/home";
+        console.log("REDIRECTING to /dashboard/home");
+        // router.replace("/dashboard/home");
+        window.location.href = "/dashboard/home";
       }
     }
-  }, [isGoogleLoginSuccess, isGoogleLogin]);
+  }, [isGoogleLoginSuccess, isGoogleLogin, router]);
 
   return (
     <div
@@ -151,7 +151,7 @@ export const LoginForm = () => {
           <TooltipTrigger
             onClick={handleSignInWithGoogle}
             disabled={!isVerified || isSubmitting}
-            type="button"
+            type="submit"
             className={cn(
               "flex w-full sm:w-[320px] items-center justify-center gap-3",
               "rounded-md border border-border bg-foreground px-4 py-2 text-base text-background",
