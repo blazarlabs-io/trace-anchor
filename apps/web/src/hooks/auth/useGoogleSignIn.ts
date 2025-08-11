@@ -24,7 +24,9 @@ export const useGoogleSignIn = () => {
     return created > now - NEW_USER_GRACE_PERIOD;
   }
 
-  const handleSignInWithGoogle = async () => {
+  const handleSignInWithGoogle = async (e: React.FormEvent) => {
+    console.log("\n\nFORM EVENT", e);
+    e.preventDefault();
     setIsGoogleLoginSuccess(false);
     try {
       // Sets the popup state of the google modal to open (true) and try to get the user's data after the login
@@ -60,11 +62,11 @@ export const useGoogleSignIn = () => {
       console.error(error);
       setIsGoogleLoginSuccess(false);
       setIsGoogleLogin(false);
-      // const errorCode = error.code;
-      // const errorMessage = error.message;
-      // const email = error.customData.email;
-      // const credential = GoogleAuthProvider.credentialFromError(error);
-      // console.log(errorCode, errorMessage, email, credential);
+      const errorCode = error.code;
+      const errorMessage = error.message;
+      const email = error.customData.email;
+      const credential = GoogleAuthProvider.credentialFromError(error);
+      console.log(errorCode, errorMessage, email, credential);
     } finally {
       setIsGoogleLogin(false);
     }
