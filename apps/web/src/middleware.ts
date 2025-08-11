@@ -18,6 +18,8 @@ export async function middleware(request: NextRequest) {
   let authData: CheckIdTokenResp | undefined = undefined;
   // if there is a token, check if it is valid if not delete it
   if (!!idToken) {
+    console.log(idToken);
+    console.log(AUTH_COOKIE);
     authData = await checkIdToken(idToken, request.url);
     if (!authData) request.cookies.delete(AUTH_COOKIE);
   }
